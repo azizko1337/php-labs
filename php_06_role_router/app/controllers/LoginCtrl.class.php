@@ -85,6 +85,8 @@ class LoginCtrl{
     }
 
     public function logout(){
+        $_SESSION = array(); //bez tego zostawala sesja do odswiezenia strony (?)
+
         // 1. zakończenie sesji - tylko kończymy, jesteśmy już podłączeni w init.php
         session_destroy();
 

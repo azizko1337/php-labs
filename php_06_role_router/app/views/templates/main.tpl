@@ -30,7 +30,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-						<li class="{if $page=="loan"}active{/if}"><a href="{$conf->app_url}">Kalkulator</a></li>
+						<li class="{if $page=="loan"}active{/if}"><a href="{$conf->action_root}loanShow">Kalkulator</a></li>
 					{if isLogged()}
 						<li><a class="btn" href="{$conf->action_url}logout">Wyloguj</a></li>
 					{else}

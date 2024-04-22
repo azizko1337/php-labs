@@ -1,27 +1,26 @@
 <?php
-/* Smarty version 3.1.45, created on 2024-04-22 19:42:26
-  from 'C:\xampp\htdocs\php_06_role_router\app\views\templates\main.tpl' */
+/* Smarty version 3.1.45, created on 2024-04-17 16:58:13
+  from 'C:\xampp\htdocs\php_05_autoloader\app\views\templates\main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.45',
-  'unifunc' => 'content_6626a18248e5b0_59611045',
+  'unifunc' => 'content_661fe3857386d1_79127386',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '31286d63ec6d05075b3fb9268e4ad6da45f96d7a' => 
+    '6cb368ac3d89b97348a47df8f6c738937105ac84' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\php_06_role_router\\app\\views\\templates\\main.tpl',
-      1 => 1713807742,
+      0 => 'C:\\xampp\\htdocs\\php_05_autoloader\\app\\views\\templates\\main.tpl',
+      1 => 1713216261,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:messages.tpl' => 1,
   ),
 ),false)) {
-function content_6626a18248e5b0_59611045 (Smarty_Internal_Template $_smarty_tpl) {
+function content_661fe3857386d1_79127386 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -65,15 +64,9 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-						<li class="<?php if ($_smarty_tpl->tpl_vars['page']->value == "loan") {?>active<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
-loanShow">Kalkulator</a></li>
-					<?php if (isLogged()) {?>
-						<li><a class="btn" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-logout">Wyloguj</a></li>
-					<?php } else { ?>
-						<li><a <?php if ($_smarty_tpl->tpl_vars['page']->value == "login") {?>style="color:white"<?php }?> class="btn" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-login">Logowanie</a></li>
-					<?php }?>
+						<li class="<?php if ($_smarty_tpl->tpl_vars['page']->value == "loan") {?>active<?php }?>"><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
+">Kalkulator</a></li>
+
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -88,8 +81,39 @@ login">Logowanie</a></li>
 			<!-- Sidebar -->
 			<aside class="col-sm-3 sidebar sidebar-right">
 
-				<?php $_smarty_tpl->_subTemplateRender("file:messages.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+			<?php if ($_smarty_tpl->tpl_vars['msgs']->value->hasErrors()) {?>
+				<h4 style="color:red;">Wystąpiły błędy: </h4>
+				<ol>
+					<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getErrors(), 'msg');
+$_smarty_tpl->tpl_vars['msg']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
+$_smarty_tpl->tpl_vars['msg']->do_else = false;
 ?>
+						<li><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+</li>
+					<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+				</ol>
+			<?php }?>
+
+			<?php if ($_smarty_tpl->tpl_vars['msgs']->value->hasInfos()) {?>
+				<h4 style="color:orange">Informacje: </h4>
+				<ol class="inf">
+					<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getInfos(), 'msg');
+$_smarty_tpl->tpl_vars['msg']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
+$_smarty_tpl->tpl_vars['msg']->do_else = false;
+?>
+						<li><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+</li>
+					<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+				</ol>
+			<?php }?>
 
 			</aside>
 			<!-- /Sidebar -->
@@ -97,7 +121,7 @@ login">Logowanie</a></li>
 			<!-- Article main content -->
 			<article class="col-sm-9 maincontent">
 				<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6690328136626a1824879d4_16762652', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_146111747661fe385732b00_52660557', "content");
 ?>
 
 			</article>
@@ -180,12 +204,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6690328136626a1824
 </body>
 </html><?php }
 /* {block "content"} */
-class Block_6690328136626a1824879d4_16762652 extends Smarty_Internal_Block
+class Block_146111747661fe385732b00_52660557 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_6690328136626a1824879d4_16762652',
+    0 => 'Block_146111747661fe385732b00_52660557',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
